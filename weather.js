@@ -5,7 +5,7 @@ if (navigator.geolocation) {
 function weatherBallon(position) {
 	var lat=position.coords.latitude;
 	var lon=position.coords.longitude;
-	var key = sessionStorage.getItem("ss")
+	var key = config.MY_API_TOKEN;
 	fetch('https://api.openweathermap.org/data/2.5/weather?lat='+lat+'&lon='+lon+'&appid='+key)  
 	.then(function(resp) { return resp.json() }) // Convert data to json
 	.then(function(data) {
